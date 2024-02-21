@@ -11,6 +11,7 @@ dependencyResolutionManagement {
     repositories {
          maven {
             url "http://10.16.33.232:8081/repository/myrepo/"
+            allowInsecureProtocol = true
             credentials {
                 username = "admin"
                 password = "password"
