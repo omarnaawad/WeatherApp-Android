@@ -4,15 +4,15 @@ plugins {
   id 'com.android.application' version '7.4.2' apply false
   id 'com.android.library' version '7.4.2' apply false
 }
-repositories {
-  maven {
-              url = "http://10.16.33.232:8081/repository/myrepo/"
-              credentials {
-                  username = 'admin'
-                  password = 'password'
-              }
-          }
-}
+//repositories {
+ // maven {
+//              url = "http://10.16.33.232:8081/repository/myrepo/"
+//              credentials {
+//                  username = 'admin'
+//                  password = 'password'
+//              }
+//          }
+//}
 publications {
         android(MavenPublication) {
             // Configure your publication here
