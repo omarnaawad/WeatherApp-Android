@@ -8,11 +8,22 @@ repositories {
   maven {
               url = "http://10.16.33.232:8081/repository/myrepo/"
               credentials {
-                  username = admin
-                  password = password
+                  username = 'admin'
+                  password = 'password'
               }
           }
 }
+publications {
+        android(MavenPublication) {
+            // Configure your publication here
+            // For Android projects, typically you'll publish AAR files
+            // Example:
+            groupId = 'com.example'
+            artifactId = 'my-android-library'
+            version = '1.0.0'
+            artifact("$buildDir/outputs/aar/my-android-library-release.aar")
+        }
+    }
 
 sonar {
   properties {
