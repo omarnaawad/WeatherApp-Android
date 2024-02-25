@@ -18,14 +18,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'chmod +x gradlew'
                 sh './gradlew assembleRelease'
             }
         }
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('mysonar') {
-                    sh 'chmod +x gradlew'
                     sh "./gradlew sonar"
                 }
             }
