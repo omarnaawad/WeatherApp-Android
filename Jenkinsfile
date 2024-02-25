@@ -18,7 +18,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh './gradlew assembleRelease'
+                //sh './gradlew assembleRelease'
+                sh './gradlew build --scan'
             }
         }
         stage('SonarQube analysis') {
