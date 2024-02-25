@@ -1,12 +1,12 @@
 pipeline {
     agent {
         docker {
-                    image 'cimg/android:2024.01' // or any image with Java and Android SDK installed
-                }
+            image 'cimg/android:2024.01' 
+        }
     }
     environment {
-        NEXUS_URL = '10.16.33.232:8081' // Update with your Nexus URL
-        NEXUS_CREDENTIAL_ID = '3' // Jenkins credentials ID for Nexus
+        NEXUS_URL = '10.16.33.232:8081'
+        NEXUS_CREDENTIAL_ID = '3' 
     }
     stages {
         stage('Test') {
@@ -35,9 +35,9 @@ pipeline {
                         nexusVersion: 'nexus3',
                         protocol: 'http',
                         nexusUrl: "10.16.33.232:8081",
-                        groupId: 'ok', // Update with your groupId
-                        version: '3', // Update with your version
-                        repository: 'myrepo', // Update with your Nexus repository
+                        groupId: 'ok',
+                        version: '3',
+                        repository: 'myrepo',
                         credentialsId: "${NEXUS_CREDENTIAL_ID}",
                         artifacts: [
                             [artifactId: 'ok', classifier: '', file: './app/build/outputs/apk/release/app-release-unsigned.apk ', type: 'apk']
