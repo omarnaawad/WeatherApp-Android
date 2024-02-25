@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-                    image 'thedrhax/android-sdk' // or any image with Java and Android SDK installed
+                    image 'gradle:latest' // or any image with Java and Android SDK installed
                 }
     }
     environment {
