@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-                    image 'gradle:latest' // or any image with Java and Android SDK installed
+                    image 'cimg/android:2024.01' // or any image with Java and Android SDK installed
                 }
     }
     environment {
