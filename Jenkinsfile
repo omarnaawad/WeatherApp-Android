@@ -14,11 +14,11 @@ pipeline {
     }
     
     stages {
-        stage('Clean WS') {
+        /*stage('Clean WS') {
             steps {
                 cleanWs()
             }
-        }
+        }*/
         stage('SCM') {
             steps {
                 checkout scm
