@@ -1,4 +1,8 @@
 pipeline {
+    options {
+        // This is required if you want to clean before build
+        skipDefaultCheckout(true)
+    }
     agent {
         docker {
             image 'cimg/android:2024.01' 
