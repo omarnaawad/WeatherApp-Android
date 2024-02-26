@@ -9,6 +9,12 @@ pipeline {
         NEXUS_CREDENTIAL_ID = '3' 
     }
     stages {
+        stage('Clean Workspace') {
+            steps {
+                // Clean workspace before starting the build
+                cleanWs()
+            }
+        }
         stage('Test') {
             steps {
                 sh 'chmod +x gradlew'
