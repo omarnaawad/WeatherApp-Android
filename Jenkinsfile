@@ -9,11 +9,6 @@ pipeline {
         NEXUS_CREDENTIAL_ID = '3' 
     }
     stages {
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()
-            }
-        }
         stage('SCM') {
             steps {
                 checkout scm
@@ -56,6 +51,12 @@ pipeline {
                     )
                 }
             }
+        }
+    }
+    post {
+         always {
+            echo "Cleaning . . . "
+            cleanWs()
         }
     }
 }
