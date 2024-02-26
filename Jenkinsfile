@@ -12,10 +12,15 @@ pipeline {
         NEXUS_URL = '10.16.33.232:8081'
         NEXUS_CREDENTIAL_ID = '3' 
     }
+    
     stages {
-        stage('SCM') {
+        stage('Clean WS') {
             steps {
                 cleanWs()
+            }
+        }
+        stage('SCM') {
+            steps {
                 checkout scm
             }
         }                  
