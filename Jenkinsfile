@@ -5,7 +5,7 @@ pipeline {
     }
     agent {
         docker {
-            image 'cimg/android:2024.01' 
+            image 'gradle:7.5.1-jdk17-alpine' //cimg/android:2024.01
         }
     }
     environment {
