@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('Clean Workspace') {
             steps {
-                // Clean workspace before starting the build
                 cleanWs()
+                checkout scm
             }
         }
         stage('Test') {
