@@ -12,9 +12,13 @@ pipeline {
         stage('Clean Workspace') {
             steps {
                 cleanWs()
-                checkout scm
             }
         }
+        stage('SCM') {
+            steps {
+                checkout scm
+            }
+        }                  
         stage('Test') {
             steps {
                 sh 'chmod +x gradlew'
